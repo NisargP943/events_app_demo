@@ -29,14 +29,6 @@ class AuthApi {
     }
   }
 
-  bool isUserSignedIn() {
-    final currentUser = auth.currentUser;
-    if (currentUser == null) {
-      return false;
-    }
-    return true;
-  }
-
   Future<void> signOutUser() async {
     await signIn.signOut();
     await auth.signOut();
